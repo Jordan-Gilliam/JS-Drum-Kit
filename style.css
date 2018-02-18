@@ -13,9 +13,10 @@ body,html {
   display: flex;
   flex: 2;
   min-height: 100vh;
-  align-self: center;
+  align-self: flex-end;
   align-items: flex-end;
   justify-content: center;
+  margin-bottom: 1px;
 }
 
 .key {
