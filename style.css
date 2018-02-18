@@ -1,9 +1,11 @@
 html {
   font-size: 10px;
-  background: url(img/RamzoidBG.png) bottom center;
+  background: url(img/Ramzoid2019BG.png) bottom center;
   background-size: cover;
 }
-body,html {
+
+body,
+html {
   margin: 0;
   padding: 0;
   font-family: sans-serif;

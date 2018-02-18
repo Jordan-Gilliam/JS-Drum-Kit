@@ -1,85 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>JS Drum Kit</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="shortcut icon" type="image/png" href="img/Favicon.png"/>
 
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8">
+    <title>JS Drum Kit</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" type="image/png" href="img/Favicon.png" />
 
-  <div class="keys">
-    <div data-key="65" class="key">
-      <kbd>A</kbd>
-      <span class="sound">clap</span>
-    </div>
-    <div data-key="83" class="key">
-      <kbd>S</kbd>
-      <span class="sound">hihat</span>
-    </div>
-    <div data-key="68" class="key">
-      <kbd>D</kbd>
-      <span class="sound">kick</span>
-    </div>
-    <div data-key="70" class="key">
-      <kbd>F</kbd>
-      <span class="sound">openhat</span>
-    </div>
-    <div data-key="71" class="key">
-      <kbd>G</kbd>
-      <span class="sound">boom</span>
-    </div>
-    <div data-key="72" class="key">
-      <kbd>H</kbd>
-      <span class="sound">ride</span>
-    </div>
-    <div data-key="74" class="key">
-      <kbd>J</kbd>
-      <span class="sound">snare</span>
-    </div>
-    <div data-key="75" class="key">
-      <kbd>K</kbd>
-      <span class="sound">tom</span>
-    </div>
-    <div data-key="76" class="key">
-      <kbd>L</kbd>
-      <span class="sound">tink</span>
-    </div>
-  </div>
+  </head>
 
-  <audio data-key="65" src="sounds/clap.wav"></audio>
-  <audio data-key="83" src="sounds/hihat.wav"></audio>
-  <audio data-key="68" src="sounds/kick.wav"></audio>
-  <audio data-key="70" src="sounds/openhat.wav"></audio>
-  <audio data-key="71" src="sounds/boom.wav"></audio>
-  <audio data-key="72" src="sounds/ride.wav"></audio>
-  <audio data-key="74" src="sounds/snare.wav"></audio>
-  <audio data-key="75" src="sounds/tom.wav"></audio>
-  <audio data-key="76" src="sounds/tink.wav"></audio>
+  <body>
 
-<script>
+    <div class="keys">
+      <!--<div class="bass">-->
+      <div data-key="65" class="key">
+        <kbd>A</kbd>
+        <span class="sound">808_thicc</span>
+      </div>
+      <div data-key="83" class="key">
+        <kbd>S</kbd>
+        <span class="sound">big_Bass</span>
+      </div>
+      <!--</div>-->
+      <!--<div class="kick">-->
+      <div data-key="68" class="key">
+        <kbd>D</kbd>
+        <span class="sound">drum_loop</span>
+      </div>
+      <div data-key="70" class="key">
+        <kbd>F</kbd>
+        <span class="sound">kick_crazy</span>
+      </div>
+      <div data-key="71" class="key">
+        <kbd>G</kbd>
+        <span class="sound">kick_dark</span>
+      </div>
+      <!--</div>-->
+      <!--<div class="snare">-->
+      <div data-key="72" class="key">
+        <kbd>H</kbd>
+        <span class="sound">snare_zoid</span>
+      </div>
+      <div data-key="74" class="key">
+        <kbd>J</kbd>
+        <span class="sound">snare_ranch</span>
+      </div>
+      <div data-key="75" class="key">
+        <kbd>K</kbd>
+        <span class="sound">snare_meadow</span>
+      </div>
+      <!--</div>-->
+      <!--<div class="sfx">-->
+      <div data-key="76" class="key">
+        <kbd>L</kbd>
+        <span class="sound">tonal_gentle</span>
+      </div>
+      <div data-key="77" class="key">
+        <kbd>M</kbd>
+        <span class="sound">tonal_space</span>
+      </div>
+      <div data-key="78" class="key">
+        <kbd>N</kbd>
+        <span class="sound">snare_trap</span>
+      </div>
+      <!--</div>-->
 
- 
-  function playSound(e) {
-    const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
-    const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
-    if(!audio)return; //stops audio from running 
-    audio.currentTime = 0;
-    audio.play();
-    key.classList.toggle('playing');
-  };
-  function removeTransition(e) {
-    if(e.propertyName !== 'transform') return;
-    this.classList.remove('playing')
-  }
+    </div>
 
-  const keys = document.querySelectorAll('.key');
-  keys.forEach(key => key.addEventListener('transitionend', removeTransition));
+    <audio data-key="65" src="sounds/RMZ_808s/RMZ_808_thiccest_C.wav"></audio>
+    <audio data-key="83" src="sounds/RMZ_bass/RMZ_bass_big_one_E.wav"></audio>
+    <audio data-key="68" src="sounds/RMZ_drums/RMZ_drum_loops/RMZ_drum_loop_very_sauteed_164.wav"></audio>
+    <audio data-key="70" src="sounds/RMZ_drums/RMZ_kicks/RMZ_kick_crazy_texture.wav"></audio>
+    <audio data-key="71" src="sounds/RMZ_drums/RMZ_kicks/RMZ_kick_dark.wav"></audio>
+    <audio data-key="72" src="sounds/RMZ_drums/RMZ_snares/RMZ_snare_zoid_dark.wav"></audio>
+    <audio data-key="74" src="sounds/RMZ_drums/RMZ_snares/RMZ_snare_cool_ranch.wav"></audio>
+    <audio data-key="75" src="sounds/RMZ_drums/RMZ_snares/RMZ_snare_zoid_meadow.wav"></audio>
+    <audio data-key="76" src="sounds/rmz_tonal/RMZ_tonal_one_shots/RMZ_tonal_one_shot_future_chord_Cmin.wav"></audio>
+    <audio data-key="77" src="sounds/rmz_tonal/RMZ_tonal_one_shots/RMZ_tonal_one_shot_future_chord_Cmaj.wav"></audio>
+    <audio data-key="78" src="sounds/rmz_tonal/RMZ_tonal_one_shots/RMZ_snare_trap_01.wav"></audio>
 
-  window.addEventListener('keydown',playSound); 
-</script>
+    <script>
+      function playSound(e) {
+        const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+        const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+        if (!audio) return; //stops audio from running 
+        audio.currentTime = 0;
+        audio.play();
+        key.classList.toggle('playing');
+      };
+
+      function removeTransition(e) {
+        if (e.propertyName !== 'transform') return;
+        this.classList.remove('playing')
+      }
+
+      const keys = document.querySelectorAll('.key');
+      keys.forEach(key => key.addEventListener('transitionend', removeTransition));
+
+      window.addEventListener('keydown', playSound);
+    </script>
 
 
-</body>
+  </body>
+
 </html>
