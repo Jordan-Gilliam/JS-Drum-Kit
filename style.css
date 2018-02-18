@@ -1,6 +1,6 @@
 html {
   font-size: 10px;
-  background: url(img/Ramzoid2019BG.png) bottom center;
+  background: url(img/Ramzoid2020BG.png) bottom center;
   background-size: cover;
 }
 
@@ -9,6 +9,17 @@ html {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+}
+
+.container {
+  -webkit-flex: 1 1 auto;
+  overflow-y: auto;
+  height: 100%;
+}
+
+.logo {
+  flex: 0;
+  align-items: flex-start;
 }
 
 .keys {
